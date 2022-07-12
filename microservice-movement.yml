@@ -13,3 +13,4 @@ eureka:
 
 endpoint:
   bankAccount: http://localhost:8005/bankAccount
+  bankCredit: http://localhost:8006/bankCredit
