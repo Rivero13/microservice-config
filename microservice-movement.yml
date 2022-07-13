@@ -12,5 +12,5 @@ eureka:
       defaultZone: http://localhost:8761/eureka
 
 endpoint:
-  bankAccount: http://localhost:8005/bankAccount
-  bankCredit: http://localhost:8006/bankCredit
+  bankAccount: http://localhost:8090/api/bankAccount
+  #bankCredit: http://localhost:8090/api/bankCredit
