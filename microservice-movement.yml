@@ -13,4 +13,4 @@ eureka:
 
 endpoint:
   bankAccount: http://localhost:8090/api/bankAccount
-  #bankCredit: http://localhost:8090/api/bankCredit
+  bankCredit: http://localhost:8090/api/bankCredit
