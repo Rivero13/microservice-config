@@ -4,13 +4,13 @@ server:
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/db_bootcamp
+      uri: mongodb://microservice-mongo5:27017/db_bootcamp
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://servicio-eureka-server:8761/eureka
 
 endpoint:
-  productBank: http://localhost:8003/productBank
-  client: http://localhost:8002/client
+  productBank: http://microservice-gateway:8090/api/productBank
+  client: http://microservice-gateway:8090/api/client
