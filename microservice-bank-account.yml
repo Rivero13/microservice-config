@@ -18,3 +18,29 @@ endpoint:
   productBank: http://localhost:8090/api/productBank
   #client: http://microservice-gateway:8090/api/client
   client: http://localhost:8090/api/client
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      customerContactInfoService:
+        registerHealthIndicator: true
+        eventConsumerBufferSize: 10
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowSize: 10
+        waitDurationInOpenState: 5s
+        slidingWindowType: COUNT_BASED
+        timeoutDuration: 2s
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
