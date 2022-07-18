@@ -1,6 +1,5 @@
 server:
-  #port: ${PORT:0}
-  port: 9004
+  port: ${PORT:0}
 
 spring:
   data:
@@ -16,11 +15,9 @@ eureka:
 
 endpoint:
   #productBank: http://microservice-gateway:8090/api/productBank
-  #productBank: http://localhost:8090/api/productBank
-  productBank: http://localhost:9002/productBank
+  productBank: http://localhost:8090/api/productBank
   #client: http://microservice-gateway:8090/api/client
-  #client: http://localhost:8090/api/client
-  client: http://localhost:9003/client
+  client: http://localhost:8090/api/client
 
 resilience4j:
   circuitbreaker:
