@@ -14,5 +14,7 @@ eureka:
       defaultZone: http://localhost:8761/eureka
 
 endpoint:
-  productBank: http://microservice-gateway:8090/api/productBank
-  client: http://microservice-gateway:8090/api/client
+  #productBank: http://microservice-gateway:8090/api/productBank
+  productBank: http://localhost:8090/api/productBank
+  #client: http://microservice-gateway:8090/api/client
+  client: http://localhost:8090/api/client
