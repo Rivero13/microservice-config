@@ -19,18 +19,26 @@ endpoint:
   #client: http://microservice-gateway:8090/api/client
   client: http://localhost:8090/api/client
 
-resilience4j.circuitbreaker:
-  instances:
-    customer-service:
-      registerHealthIndicator: true
-      eventConsumerBufferSize: 10
-      automaticTransitionFromOpenToHalfOpenEnabled: true
-      failureRateThreshold: 50
-      minimumNumberOfCalls: 5
-      permittedNumberOfCallsInHalfOpenState: 3
-      slidingWindowSize: 10
-      waitDurationInOpenState: 5s
-      slidingWindowType: COUNT_BASED
-      timeoutDuration: 2s
+resilience4j:
+  retry:
+    instances:
+      throwingException:
+        maxRetryAttempts: 3
+        waitDuration: 2s
+        retryExceptions:
+          - java.lang.Exception
+  circuitbreaker:
+    instances:
+      customer-service:
+        registerHealthIndicator: true
+        eventConsumerBufferSize: 10
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowSize: 10
+        waitDurationInOpenState: 5s
+        slidingWindowType: COUNT_BASED
+        timeoutDuration: 2s
 
 
