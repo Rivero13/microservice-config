@@ -21,11 +21,15 @@ endpoint:
 
 resilience4j:
   retry:
+    retry-aspect-order: 2
     instances:
       throwingException:
-        maxRetryAttempts: 3
-        waitDuration: 2s
-        retryExceptions:
+        max-attempts: 3
+        wait-duration: 5s
+        enable-exponential-backoff: true
+        exponential-backoff-multiplier: 2
+        retry-exceptions:
+          - org.springframework.web.client.RestClientException
           - java.lang.Exception
   circuitbreaker:
     instances:
