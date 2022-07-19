@@ -22,9 +22,15 @@ endpoint:
 resilience4j.circuitbreaker:
   instances:
     customer-service:
+      registerHealthIndicator: true
+      eventConsumerBufferSize: 10
+      automaticTransitionFromOpenToHalfOpenEnabled: true
       failureRateThreshold: 50
-      minimumNumberOfCalls: 10
-      slidingWindowType: TIME_BASED
-      slidingWindowSize: 10
-      waitDurationInOpenState: 50s
+      minimumNumberOfCalls: 5
       permittedNumberOfCallsInHalfOpenState: 3
+      slidingWindowSize: 10
+      waitDurationInOpenState: 5s
+      slidingWindowType: COUNT_BASED
+      timeoutDuration: 2s
+
+
