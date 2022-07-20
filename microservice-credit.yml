@@ -17,9 +17,6 @@ logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
 
-springdoc:
-  packagesToScan: com.bootcamp.ms.creditBank
-
 endpoint:
   #productBank: http://microservice-gateway:8090/api/productBank
   productBank: http://localhost:8090/api/productBank

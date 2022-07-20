@@ -45,16 +45,3 @@ spring:
             - Path= /api/movement/**
           filters:
             - StripPrefix=2
-
-        - id: openapi
-          uri: http://localhost:${server.port}
-          predicates:
-            - Path=/v3/api-docs/**
-          filters:
-            - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
-
-springdoc:
-  swagger-ui:
-    urls:
-      - name: microservice-credit
-        url: /v3/api-docs/microservice-credit
