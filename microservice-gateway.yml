@@ -45,3 +45,9 @@ spring:
             - Path= /api/movement/**
           filters:
             - StripPrefix=2
+
+springdoc:
+  swagger-ui:
+    urls:
+      - name: microservice-credit
+        url: /v3/api-docs/microservice-credit
