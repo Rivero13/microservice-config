@@ -44,5 +44,3 @@ resilience4j:
         waitDurationInOpenState: 5s
         slidingWindowType: COUNT_BASED
         timeoutDuration: 2s
-
-
