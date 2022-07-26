@@ -15,9 +15,9 @@ eureka:
 
 endpoint:
   #productBank: http://microservice-gateway:8090/api/productBank
-  productBank: http://localhost:8090/api/productBank
+  bankAccount: http://localhost:8090/api/bankAccount
   #client: http://microservice-gateway:8090/api/client
-  client: http://localhost:8090/api/client
+  movement: http://localhost:8090/api/movement
 
 resilience4j:
   retry:
