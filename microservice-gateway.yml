@@ -45,3 +45,10 @@ spring:
             - Path= /api/movement/**
           filters:
             - StripPrefix=2
+
+        - id: microservice-card-debit
+          uri: lb://microservice-card-debit
+          predicates:
+            - Path= /api/cardDebit/**
+          filters:
+            - StripPrefix=2
